@@ -1,7 +1,16 @@
-import React from './node_modules/react';
-import { Button } from '@material-ui/core';
+import React from 'react';
+import {coctaillist} from "../../components/coctaillist/coctaillist.jsx"
 
 class coctailoverview extends React.Component{
+
+    state = {
+        coctails: 
+        [ 
+        {Coctail:"Californiaction", Zutaten: ["Zutat1", "Zutat2"], Rezept: ["Schritt1", "Schritt2"], Beschreibung: "Nie wieder."},
+        {Coctail:"Mojito", Zutaten: ["Zutat1", "Zutat2"], Rezept: ["Schritt1", "Schritt2"], Beschreibung: "Sehr viel Zucker."},
+        {Coctail:"Sex on the Beach", Zutaten: ["Zutat1", "Zutat2"], Rezept: ["Schritt1", "Schritt2"], Beschreibung: "Der Drink.."}
+    ]
+    }
 
     render () {
 
@@ -9,7 +18,6 @@ class coctailoverview extends React.Component{
             <div>
                 {coctaillist(this.state.coctails)}
             </div>
-            // rest is missing
         );
     }
 }

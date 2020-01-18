@@ -1,7 +1,6 @@
 import React from "react";
 import Button from '@material-ui/core/Button';
-import RecipeView from "../../containers/RecipeView/RecipeView.jsx"
-import { Switch, Link, Route, HashRouter} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 export function coctaillist(probs) {
 
@@ -27,25 +26,12 @@ export function coctaillist(probs) {
     )
 
     return (
-        
-        <HashRouter>
-            <div>
-                <nav>
-                    <table>
-                        <tbody>
-                            {content}
-                        </tbody>
-                    </table>
-                </nav>
-
-                <Switch>
-
-                    <Route path = "/Mojito" conponent = {RecipeView} exact />
-                    <Route path = "/Sex%20on%20the%20Beach" exact conponent = {RecipeView} />
-                    <Route path = "/Californication" exact conponent = {RecipeView} />
-
-                </Switch>
-            </div>
-        </HashRouter>
+        <div>
+            <table>
+                <tbody>
+                    {content}
+                </tbody>
+            </table>
+        </div>
     );
 }

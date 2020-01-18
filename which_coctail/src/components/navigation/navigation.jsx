@@ -4,7 +4,7 @@ import { Switch, Link, Route} from 'react-router-dom';
 
 import FrontPage from "../../containers/FrontPage/FrontPage.jsx";
 import coctailoverview from "../../containers/coctailoverview/coctailoverview.jsx";
-import RecipeView from "../../containers/RecipeView/RecipeView.jsx";
+import Recipeview from "../../containers/Recipeview/Recipeview.jsx";
 
 export function navigation(siteToLoad) {
 
@@ -29,21 +29,29 @@ export function navigation(siteToLoad) {
                 <br />
 
                 <Link to = "/coctailname">
-                    <Button id = "ReciepeView" variant = "contained" color = "default" size = "large">
+                    <Button id = "RecipeView" variant = "contained" color = "default" size = "large">
                         CoctailName
                     </Button>
                 </Link>
+
             </nav>
 
             <Switch>
-
+                
                 <Route path = "/zutatenwahl" component = {FrontPage} />
 
                 <Route path = "/coctailübersicht" component = {coctailoverview} />
+                
+                <Route path = "/coctailname" conponent = {Recipeview} />
 
-                <Route path = "/coctailname" conponent = {RecipeView} />
+                <Route path = "/Mojito" conponent = {Recipeview} />
+
+                <Route path = "/Sex%20on%20the%20Beach"  conponent = {Recipeview} />
+                
+                <Route path = "/Californication" conponent = {Recipeview} />
 
             </Switch>
+
         </div>
     );
 }
