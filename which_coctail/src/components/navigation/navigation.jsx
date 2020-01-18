@@ -41,7 +41,7 @@ export function navigation(siteToLoad) {
 
                 <Route path = "/coctailübersicht" component = {coctailoverview} />
 
-                <Route path = "/coctailname" component = {RecipeView} />
+                <Route path = "/coctailname" conponent = {RecipeView} />
 
             </Switch>
         </div>

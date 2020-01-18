@@ -1,13 +1,33 @@
 import React from 'react';
+import { Checkbox } from '@material-ui/core';
 
-class chooseIngredients extends React.Component{
+export function chooseIngredients(probs) {
 
-    render () {
+    let content = []
+    probs.map((element) => 
+        content.push(
+            <tr id = {element.Zutat} >
+                <td>
+                    {element.Zutat}
+                </td>
+                <td>
+                    <Checkbox 
+                        value = "uncontrolled" 
+                        inputProps = {{ 'aria-label': 'uncontrolled-checkbox' }} 
+                        id = {element.Zutat} 
+                        /*onChange = {}*/ />
+                </td>
+            </tr>
+        )
+    )
 
-        return (
-            // rest is missing
-        );
-    }
+    return (
+        <div>
+            <table>
+                <tbody>
+                    {content}
+                </tbody>
+            </table>
+        </div>
+    );
 }
-
-export default chooseIngredients;
