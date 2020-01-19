@@ -1,12 +1,18 @@
 import React from 'react';
 import { Checkbox } from '@material-ui/core';
 
-export function ChooseIngredients(probs) {
+export function ChooseIngredients(probs, getActiveIngretients) {
 
     const handleChange = (event) => {
         update_ingredient_list(event);
         console.log(choosen_ingredients)
+        // get data to FrontPage
+        returnActiveIngredients()
     };
+
+    const returnActiveIngredients = () => {
+        getActiveIngretients(choosen_ingredients)
+    }
     
     const update_ingredient_list = (event) => {
 

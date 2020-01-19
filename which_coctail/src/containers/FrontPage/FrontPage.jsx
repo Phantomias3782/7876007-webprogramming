@@ -9,32 +9,21 @@ class FrontPage extends React.Component{
         super(probs)
         this.state =  probs
     }
-
-    /*handleChange = (id) => {
-
-    var index = this.state.ingredients.findIndex(function(item, i){
-    return item.name === id
-    });
-
-    console.log("zutat", id)
-    var tmpelement = this.state.ingredients[index]
-    console.log("index", index)
-    console.log("tmpelement", tmpelement)
-    //tmpelement.Ausgewählt = !tmpelement.Ausgewählt
-
-    this.setState(this.state.ingredients[index] = tmpelement)
-    console.log("state after button", this.state)
-
-    console.log(index);
-
-    }*/
+    
+    
+    getActiveIngretients = (data) => {
+        //this.setState({activeIngretients: data})
+        this.activedata = data
+        console.log("so sieht es aus:", this.activedata)
+    }
 
     render () {
 
         return (
             <div id = "FrontPagechooseingredients" >
                 
-                {ChooseIngredients(this.state.ingredients)}
+                {ChooseIngredients(this.state.ingredients, this.getActiveIngretients)}
+                {console.log("Output", this.activedata) /* test if everything works*/} 
 
                 <hr // Adapt in css
                     style= {{
