@@ -6,7 +6,15 @@ import FrontPage from "../../containers/FrontPage/FrontPage.jsx";
 import coctailoverview from "../../containers/coctailoverview/coctailoverview.jsx";
 import Recipeview from "../../containers/Recipeview/Recipeview.jsx";
 
-export function navigation(siteToLoad) {
+export function navigation(probs) {
+
+    // load all coctails
+    let coctails = probs.coctails  
+
+    // save each coctail to own variable
+    let mojito = {coctail: coctails[1]}
+    let californication = {coctail: coctails[0]}
+    let sotb = {coctail: coctails[2]}
 
     return (
         <div id = "navigationArea">
@@ -42,13 +50,13 @@ export function navigation(siteToLoad) {
 
                 <Route path = "/coctailübersicht" component = {coctailoverview} />
                 
-                <Route path = "/coctailname" conponent = {Recipeview} />
+                <Route path = "/coctailname" render = {() => <Recipeview {...mojito} />} />
 
-                <Route path = "/Mojito" conponent = {Recipeview} />
+                <Route path = "/Mojito" render = {() => <Recipeview {...mojito} />}  />
 
-                <Route path = "/Sex%20on%20the%20Beach"  conponent = {Recipeview} />
+                <Route path = "/Sex_on_the_Beach"  render = {() => <Recipeview {...sotb} />} />
                 
-                <Route path = "/Californication" conponent = {Recipeview} />
+                <Route path = "/Californication" render = {() => <Recipeview {...californication} />} />
 
             </Switch>
 
