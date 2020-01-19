@@ -8,8 +8,12 @@ import Recipeview from "../../containers/Recipeview/Recipeview.jsx";
 
 export function navigation(probs) {
 
+    console.log("navprobs", probs.ingredients)
     // load all coctails
-    let coctails = probs.coctails  
+    let coctails = probs.coctails
+    // load all ingredients and save them to variable
+    let ingredients = {ingredients: probs.ingredients}
+    console.log("ingredients", ingredients)
 
     // save each coctail to own variable
     let mojito = {coctail: coctails[1]}
@@ -46,7 +50,7 @@ export function navigation(probs) {
 
             <Switch>
                 
-                <Route path = "/zutatenwahl" component = {FrontPage} />
+                <Route path = "/zutatenwahl" render = {() => <FrontPage {...ingredients} />} />
 
                 <Route path = "/coctailübersicht" component = {coctailoverview} />
                 

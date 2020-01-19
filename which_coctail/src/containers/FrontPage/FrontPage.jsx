@@ -1,22 +1,40 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import { Checkbox } from '@material-ui/core';
-import { chooseIngredients } from '../../components/chooseingredients/chooseingredients';
+import { ChooseIngredients } from '../../components/chooseingredients/chooseingredients';
+import { Link} from 'react-router-dom';
 
 class FrontPage extends React.Component{
-
-    state = {
-        ingredients : [ {Zutat:"Tomaten", Ausgewählt:false}, {Zutat:"Kürbis", Ausgewählt:false}, {Zutat:"Apfel", Ausgewählt:false} ]
+    constructor(probs) {
+        super(probs)
+        this.state =  probs
     }
-    
 
+    /*handleChange = (id) => {
+
+    var index = this.state.ingredients.findIndex(function(item, i){
+    return item.name === id
+    });
+
+    console.log("zutat", id)
+    var tmpelement = this.state.ingredients[index]
+    console.log("index", index)
+    console.log("tmpelement", tmpelement)
+    //tmpelement.Ausgewählt = !tmpelement.Ausgewählt
+
+    this.setState(this.state.ingredients[index] = tmpelement)
+    console.log("state after button", this.state)
+
+    console.log(index);
+
+    }*/
 
     render () {
 
         return (
             <div id = "FrontPagechooseingredients" >
                 
-                {chooseIngredients(this.state.ingredients)}
+                {ChooseIngredients(this.state.ingredients)}
 
                 <hr // Adapt in css
                     style= {{
@@ -39,12 +57,13 @@ class FrontPage extends React.Component{
                     }}> 
                 </hr>
 
-                <Button>
-                    Suche passende Coctails
-                </Button>
+                <Link to = "/coctailübersicht" >
+                    <Button>
+                        Suche passende Coctails
+                    </Button>
+                </Link>
 
             </div>
-            // rest is missing
         );
     }
 }

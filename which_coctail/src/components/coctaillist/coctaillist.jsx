@@ -9,7 +9,7 @@ export function coctaillist(probs) {
         content.push(
             <tr id = {element.Coctail} >
                 <Link to = {element.Coctail}>
-                    <Button /*onClick = {handleclick(element)}*/>
+                    <Button >
                         <td>
                             Hier wird ein Bild angezeigt werden.
                         </td>
