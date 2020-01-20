@@ -8,8 +8,18 @@ import Coctailoverview from '../coctailoverview/coctailoverview';
 class FrontPage extends React.Component{
     constructor(probs) {
         super(probs)
-        this.state =  {ingredients: probs.ingredients, cockTail: false, coctails: probs.coctails} // if backup --> here this.state = probs
+        this.state =  {
+            ingredients: probs.ingredients, 
+            loadCoctailOverview: false, 
+            coctails: probs.coctails, 
+            considerall: false,
+            } // if backup --> here this.state = probs
         this.activedata = 0 // actual problem with rerender: cant go back!
+        this.backupcoctails = {
+            coctails : probs.coctails, 
+            shoppingtext: "Zeige alle Coctails. Für einige wirst du einkaufen müssen!",
+            showText: true
+            }
     }
 
     coctailstoload = () => {
@@ -70,7 +80,15 @@ class FrontPage extends React.Component{
         //console.log("probs", this.state) same as activedata?
         this.coctailstoload() // update state variabel from all coctails to only selected coctails
         
-        this.setState({cockTail:true})
+        this.setState({loadCoctailOverview:true})
+    }
+
+    missinging = () => {
+        this.actualstatus = false
+        this.actualstatus = this.state.considerall
+        this.actualstatus ? this.actualstatus = false : this.actualstatus = true
+        this.setState({considerall: this.actualstatus})
+        console.log("check missing ingredients",this.state.considerall)
     }
     
     getActiveIngretients = (data) => {
@@ -83,8 +101,11 @@ class FrontPage extends React.Component{
 
         return (
             <div> 
-                {this.state.cockTail ?
-                    < Coctailoverview {...this.state}/>
+                {this.state.loadCoctailOverview ?
+                    this.state.considerall ? 
+                        < Coctailoverview {...this.backupcoctails}/>
+                    :
+                        < Coctailoverview {...this.state}/>
                 :
                 <div id = "FrontPagechooseingredients" >
     
@@ -104,7 +125,7 @@ class FrontPage extends React.Component{
     
                     <p>
                         Fehlende Zutaten miteinbeziehen?
-                        <Checkbox value="uncontrolled" inputProps={{ 'aria-label': 'uncontrolled-checkbox' }} />
+                        <Checkbox onClick = {this.missinging} value="uncontrolled" inputProps={{ 'aria-label': 'uncontrolled-checkbox' }} />
                     </p>
     
                     <hr // Adapt in css

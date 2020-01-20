@@ -8,6 +8,8 @@ class Coctailoverview extends React.Component{
         console.log("coctailoverview",probs)
         let showEmpty = false
         this.state.coctails && this.state.coctails.length ? this.showEmpty = false : this.showEmpty = true
+        this.text = probs.shoppingtext
+        this.showText = probs.showText
     }
 
     render () {
@@ -24,6 +26,7 @@ class Coctailoverview extends React.Component{
                     </p>
                 :
                 <div>
+                    {this.showText ? this.text : null}
                     {coctaillist(this.state.coctails)}
                 </div>
                 }
