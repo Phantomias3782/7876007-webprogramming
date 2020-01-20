@@ -5,33 +5,33 @@ export function ChooseIngredients(probs, getActiveIngretients) {
 
     const handleChange = (event) => {
         update_ingredient_list(event);
-        console.log(choosen_ingredients)
         // get data to FrontPage
         returnActiveIngredients()
     };
 
     const returnActiveIngredients = () => {
-        getActiveIngretients(choosen_ingredients)
+        getActiveIngretients(probs)
     }
     
     const update_ingredient_list = (event) => {
 
         // save index for acces suiting object
-        let index = choosen_ingredients.findIndex(x => x.key === event.target.id)
+        let index = probs.findIndex(x => x.Zutat === event.target.id)
 
         if (index === -1) { 
             // save new object 
-            choosen_ingredients.push( {key: event.target.id, value: event.target.checked}) }
+            console.log("Unbekannte Zutat")
+            probs.push( {Zutat: event.target.id, Ausgewählt: event.target.checked}) } //old code - with choosen_ingredients and key / value
         else {
             // set opposite status, if object already exists
-            let status = choosen_ingredients[index].value
+            let status = probs[index].Ausgewählt
             let rstatus = true
             if (status === true) {rstatus = false} else {rstatus = true}
-            choosen_ingredients[index].value = rstatus}
+            probs[index].Ausgewählt = rstatus}
     }
 
     // initialize choosen ingredients
-    let choosen_ingredients = []
+    //let choosen_ingredients = [] old code - with choosen_ingredients and key / value
 
     let content = []
     probs.map((element) => 

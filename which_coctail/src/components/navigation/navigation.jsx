@@ -3,22 +3,22 @@ import Button from '@material-ui/core/Button';
 import { Switch, Link, Route} from 'react-router-dom';
 
 import FrontPage from "../../containers/FrontPage/FrontPage.jsx";
-import coctailoverview from "../../containers/coctailoverview/coctailoverview.jsx";
+import Coctailoverview from "../../containers/coctailoverview/coctailoverview.jsx";
 import Recipeview from "../../containers/Recipeview/Recipeview.jsx";
 
 export function navigation(probs) {
 
-    console.log("navprobs", probs.ingredients)
     // load all coctails
-    let coctails = probs.coctails
+    let coctails = {coctails : probs.coctails}
+    
     // load all ingredients and save them to variable
-    let ingredients = {ingredients: probs.ingredients}
-    console.log("ingredients", ingredients)
+    //let ingredients = {ingredients: probs.ingredients} replaced - old code
 
     // save each coctail to own variable
-    let mojito = {coctail: coctails[1]}
-    let californication = {coctail: coctails[0]}
-    let sotb = {coctail: coctails[2]}
+    let mojito = {coctail: coctails.coctails[1]}
+    let californication = {coctail: coctails.coctails[0]}
+    let sotb = {coctail: coctails.coctails[2]}
+
 
     return (
         <div id = "navigationArea">
@@ -50,9 +50,9 @@ export function navigation(probs) {
 
             <Switch>
                 
-                <Route path = "/zutatenwahl" render = {() => <FrontPage {...ingredients} />} />
+                <Route path = "/zutatenwahl" render = {() => <FrontPage {...probs} />} /> {/* replaced ...ingredients by ...probs */}
 
-                <Route path = "/coctailübersicht" component = {coctailoverview} />
+                <Route path = "/coctailübersicht" render = {() => <Coctailoverview {...probs} />} /> {/*replaced ...coctails by ...props */}
                 
                 <Route path = "/coctailname" render = {() => <Recipeview {...mojito} />} />
 

@@ -5,6 +5,7 @@ class RecipeView extends React.Component{
     constructor(probs) {
         super(probs)
         this.state =  probs
+        console.log("recipeview", this.state)
     }
     
     render () {

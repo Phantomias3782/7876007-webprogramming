@@ -5,11 +5,12 @@ import {Link} from 'react-router-dom';
 export function coctaillist(probs) {
 
     let content = []
+    console.log("probscoctaillist", probs)
     probs.map((element) => 
         content.push(
             <tr id = {element.Coctail} >
                 <Link to = {element.Coctail}>
-                    <Button >
+                    <Button>
                         <td>
                             Hier wird ein Bild angezeigt werden.
                         </td>

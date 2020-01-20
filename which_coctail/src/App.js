@@ -10,15 +10,15 @@ class App extends React.Component {
   state = {
     coctails: 
     [ 
-      {Coctail:"Californication", Zutaten: ["Zutat1", "Zutat2"], Rezept: ["Schritt1", "Schritt2"], Beschreibung: "Nie wieder."},
-      {Coctail:"Mojito", Zutaten: ["Zutat1", "Zutat2"], Rezept: ["Schritt1", "Schritt2"], Beschreibung: "Sehr viel Zucker."},
-      {Coctail:"Sex_on_the_Beach", Zutaten: ["Zutat1", "Zutat2"], Rezept: ["Schritt1", "Schritt2"], Beschreibung: "Der Drink.."}
+      {Coctail:"Californication", Zutaten: ["Vodka", "Malibu"], Rezept: ["Schritt4", "Schritt2"], Beschreibung: "Nie wieder. (Denke ich)"},
+      {Coctail:"Mojito", Zutaten: ["Malibu", "Rum"], Rezept: ["Schritt1", "Schritt2"], Beschreibung: "Sehr viel Zucker."},
+      {Coctail:"Sex_on_the_Beach", Zutaten: ["Vodka", "Rum"], Rezept: ["Schritt1", "Schritt2"], Beschreibung: "Der Drink, nicht die Tat."}
     ],
     ingredients : 
     [ 
-      {Zutat:"Tomaten", Ausgewählt:false}, 
-      {Zutat:"Kürbis", Ausgewählt:false}, 
-      {Zutat:"Apfel", Ausgewählt:false}
+      {Zutat:"Vodka", Ausgewählt:false}, 
+      {Zutat:"Rum", Ausgewählt:false}, 
+      {Zutat:"Malibu", Ausgewählt:false}
     ]
   }
   

@@ -5,6 +5,7 @@ export function coctail(probs) {
 
     let zutaten = []
     let rezept = []
+    console.log(probs)
     probs.Zutaten.map((element) => 
         zutaten.push(
             <tr>

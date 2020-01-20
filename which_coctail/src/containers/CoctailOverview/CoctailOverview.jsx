@@ -1,25 +1,31 @@
 import React from 'react';
 import {coctaillist} from "../../components/coctaillist/coctaillist.jsx"
 
-class coctailoverview extends React.Component{
-
-    state = {
-        coctails: 
-        [ 
-        {Coctail:"Californication", Zutaten: ["Zutat1", "Zutat2"], Rezept: ["Schritt1", "Schritt2"], Beschreibung: "Nie wieder."},
-        {Coctail:"Mojito", Zutaten: ["Zutat1", "Zutat2"], Rezept: ["Schritt1", "Schritt2"], Beschreibung: "Sehr viel Zucker."},
-        {Coctail:"Sex_on_the_Beach", Zutaten: ["Zutat1", "Zutat2"], Rezept: ["Schritt1", "Schritt2"], Beschreibung: "Der Drink.."}
-    ]
+class Coctailoverview extends React.Component{
+    constructor(probs) {
+        super(probs)
+        this.state = {coctails: probs.coctails}
+        console.log("coctailoverview",probs)
+        let showEmpty = false
+        this.state.coctails && this.state.coctails.length ? this.showEmpty = false : this.showEmpty = true
     }
 
     render () {
 
         return (
             <div>
-                {coctaillist(this.state.coctails)}
+                {this.showEmpty ? 
+                    <p>
+                        Leider keine Coctails gefunden! Bitte Seite neuladen und zurückkehren
+                    </p>
+                :
+                <div>
+                    {coctaillist(this.state.coctails)}
+                </div>
+                }
             </div>
         );
     }
 }
 
-export default coctailoverview;
+export default Coctailoverview;
