@@ -16,7 +16,11 @@ class Coctailoverview extends React.Component{
             <div>
                 {this.showEmpty ? 
                     <p>
-                        Leider keine Coctails gefunden! Bitte Seite neuladen und zurückkehren
+                        <h1> 
+                            Leider hast du nicht genügend Zutaten für einen Coctail! 
+                            Seite wird neu geladen.
+                        </h1>
+                        {setTimeout(() => { window.location.reload() }, 1000)}
                     </p>
                 :
                 <div>
