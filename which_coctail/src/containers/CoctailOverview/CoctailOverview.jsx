@@ -25,7 +25,7 @@ class Coctailoverview extends React.Component{
                             Leider hast du nicht genügend Zutaten für einen Coctail! 
                             Seite wird neu geladen.
                         </h1>
-                        {setTimeout(() => { window.location.reload() }, 1000)}
+                        {/*{setTimeout(() => { window.location.reload() }, 1000)}*/}
                     </p>
                 :
                 <div id = "coctaillist">

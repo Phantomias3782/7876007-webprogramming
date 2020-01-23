@@ -56,31 +56,45 @@ class FrontPage extends React.Component{
             // if true save name of coctail
             (tmpvalue ? possiblecoctails.push(element[0]) : null)
         ));
-        console.log("possible coctails", possiblecoctails)
+
+        // save percentage of ingredients for each coctail
+        let perc_per_coctail = []
+        let tmp_num = 0
+        let temp_per = []
+        let bool = false
+        let len = 0
+        let percentage = 0
+
+        coctailingredients.forEach((e) => (
+            temp_per = e[1],
+            tmp_num = 0,
+            len = e[1].length,
+            temp_per.forEach((e2) => (
+                bool = activeingredients.includes(e2),
+                bool ? tmp_num +=1 : null
+            )),
+            percentage = tmp_num / len,
+            {/*(percentage > 1) ? percentage = 1 : null,*/},
+            perc_per_coctail.push([e[0], percentage])
+        ))
+        console.log("percentage", perc_per_coctail)
         
         // load all elements of possible coctails
         console.log("all coctails", this.state.coctails)
         let allcoctails = []
+
         let add = 0
         possiblecoctails.forEach((element) => (
             this.state.coctails.forEach((element2) => (
                 add = (element === element2.Coctail),
-                console.log("add", add),
-                console.log("coctail", element2),
                 ( element === element2.Coctail ? allcoctails.push(element2) : null )
             ))
         ))
-        console.log("allcoctails", allcoctails)
         // save possible coctail with their attributes to state
         this.setState({coctails : allcoctails})
-        console.log("possible coctail full list", this.state)
-
-        //this.setState({coctails: choosencoctails})
     }
     
     openCoctails = () => {
-        console.log("das wird übergeben:", this.activedata)
-        //console.log("probs", this.state) same as activedata?
         this.coctailstoload() // update state variabel from all coctails to only selected coctails
         
         this.setState({loadCoctailOverview:true})
@@ -91,7 +105,6 @@ class FrontPage extends React.Component{
         this.actualstatus = this.state.considerall
         this.actualstatus ? this.actualstatus = false : this.actualstatus = true
         this.setState({considerall: this.actualstatus})
-        console.log("check missing ingredients",this.state.considerall)
     }
     
     getActiveIngretients = (data) => {
