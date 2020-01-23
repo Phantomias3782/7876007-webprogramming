@@ -10,15 +10,17 @@ class App extends React.Component {
   state = {
     coctails: 
     [ 
-      {Coctail:"Californication", Zutaten: ["Vodka", "Malibu"], Rezept: ["Schritt4", "Schritt2"], Beschreibung: "Nie wieder. (Denke ich)", Bild: "../../images/californication.jpg"},
-      {Coctail:"Mojito", Zutaten: ["Malibu", "Rum"], Rezept: ["Schritt1", "Schritt2"], Beschreibung: "Sehr viel Zucker.", Bild: "../../../images/mojito.jpg"},
-      {Coctail:"Sex_on_the_Beach", Zutaten: ["Vodka", "Rum"], Rezept: ["Schritt1", "Schritt2"], Beschreibung: "Der Drink, nicht die Tat.", Bild: "../../../images/sotb.jpg"}
+      {Coctail:"Californication", Zutaten: ["Vodka", "Malibu", "Gin", "Tequila"], Rezept: ["Alle Zutaten in einem Shaker mixen.", "Durch ein Sieb in ein halb mit Eiswüfel gefülltem Sieb schütten."], Beschreibung: "Ein Drink, der richtig reinhaut. Sorgt für tropisches Feeling"},
+      {Coctail:"Mojito", Zutaten: ["Malibu", "Rum"], Rezept: ["Schritt1", "Schritt2"], Beschreibung: "Sehr viel Zucker."},
+      {Coctail:"Sex_on_the_Beach", Zutaten: ["Vodka", "Rum"], Rezept: ["Schritt1", "Schritt2"], Beschreibung: "Der Drink, nicht die Tat."}
     ],
     ingredients : 
     [ 
       {Zutat:"Vodka", Ausgewählt:false}, 
       {Zutat:"Rum", Ausgewählt:false}, 
-      {Zutat:"Malibu", Ausgewählt:false}
+      {Zutat:"Malibu", Ausgewählt:false},
+      {Zutat:"Gin", Ausgewählt:false},
+      {Zutat:"Tequila", Ausgewählt:false}
     ]
   }
   
@@ -28,7 +30,7 @@ class App extends React.Component {
     return (
 
       <BrowserRouter>
-        <div> 
+        <div id = "app"> 
           {navigation(this.state)}
         </div>
       </BrowserRouter>

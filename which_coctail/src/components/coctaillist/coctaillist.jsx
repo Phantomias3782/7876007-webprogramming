@@ -22,18 +22,26 @@ export function coctaillist(probs) {
                     <Link to = {element.Coctail}>
                         <Button>
                             <td>
-                                <img src = {img} />
+                                <img src = {img} width = "200" length = "200" />
                             </td>
-                            <td className = "tabledatacoctaillist">
-                                {element.Coctail}
-                            </td>
-                            <td>
-                                {element.Beschreibung}
-                            </td>
+                            <table>
+                                <tr>
+                                    <td className = "tabledatacoctaillist">
+                                        <h3>
+                                            {element.Coctail}
+                                        </h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td id = "description">
+                                        {element.Beschreibung}
+                                    </td>
+                                </tr>
+                            </table>
                         </Button>
                     </Link>
                 </tr>
-            <br />
+            <br id = "absatz"/>
             </div>
         )
     )

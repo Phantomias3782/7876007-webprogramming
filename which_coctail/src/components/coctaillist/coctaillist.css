@@ -12,3 +12,9 @@
 #absatz {
     line-height: 10px;
 }
+
+#description {
+    text-align: auto;
+    color: grey;
+    font-size: small;
+}

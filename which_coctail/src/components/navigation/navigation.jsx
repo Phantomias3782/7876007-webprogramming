@@ -45,7 +45,7 @@ export function navigation(probs) {
 
                 <Link to = "/coctailname">
                     <Button id = "RecipeView" variant = "contained" color = "default" size = "large">
-                        CoctailName
+                        Coctail
                     </Button>
                 </Link>
 
