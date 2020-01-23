@@ -1,6 +1,9 @@
 import React from 'react';
 import {coctail} from "../../components/coctaillist/coctail/coctail.jsx";
 
+// import css-Files
+import './Recipeview.css';
+
 class RecipeView extends React.Component{
     constructor(probs) {
         super(probs)
@@ -11,8 +14,8 @@ class RecipeView extends React.Component{
     render () {
 
         return (
-            <div>
-                { coctail(this.state.coctail)}
+            <div id = "recipeview">
+                { coctail(this.state.coctail) }
             </div>
         );
     }

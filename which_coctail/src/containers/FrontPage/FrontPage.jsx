@@ -5,6 +5,9 @@ import { ChooseIngredients } from '../../components/chooseingredients/chooseingr
 import Coctailoverview from '../coctailoverview/coctailoverview';
 //import {Link} from 'react-router-dom';
 
+// import css-Files
+import './FrontPage.css';
+
 class FrontPage extends React.Component{
     constructor(probs) {
         super(probs)
@@ -109,7 +112,7 @@ class FrontPage extends React.Component{
                 :
                 <div id = "FrontPagechooseingredients" >
     
-                    <h2>
+                    <h2 id = "FrontPageHead">
                         Welche Zutaten sind da?
                     </h2>
                     
@@ -117,28 +120,31 @@ class FrontPage extends React.Component{
     
                     <hr // Adapt in css
                         style= {{
-                        color: "red",
-                        backgroundColor: "red",
-                        height: 5
+                        color: "black",
+                        backgroundColor: "black",
+                        height: 1/*,
+                        width: 400*/
                         }}> 
                     </hr>
     
-                    <p>
+                    <p id = "fehlendezutaten">
                         Fehlende Zutaten miteinbeziehen?
                         <Checkbox onClick = {this.missinging} value="uncontrolled" inputProps={{ 'aria-label': 'uncontrolled-checkbox' }} />
                     </p>
     
                     <hr // Adapt in css
                         style= {{
-                        color: "blue",
-                        backgroundColor: "blue",
-                        height: 5
+                        color: "black",
+                        backgroundColor: "black",
+                        height: 1/*,
+                        width: 400*/
                         }}> 
                     </hr>
                     
                     <Button onClick = {this.openCoctails}  >
                         Suche passende Coctails!
                     </Button>
+                    {/*<img src = {require("../../images/californication.jpg")} />*/}
     
                 </div>
 

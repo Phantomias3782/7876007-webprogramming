@@ -1,6 +1,9 @@
 import React from 'react';
 import {coctaillist} from "../../components/coctaillist/coctaillist.jsx"
 
+// import css-Files
+import './coctailoverview.css';
+
 class Coctailoverview extends React.Component{
     constructor(probs) {
         super(probs)
@@ -15,7 +18,7 @@ class Coctailoverview extends React.Component{
     render () {
 
         return (
-            <div>
+            <div id = "coctailoverview">
                 {this.showEmpty ? 
                     <p>
                         <h1> 
@@ -25,8 +28,9 @@ class Coctailoverview extends React.Component{
                         {setTimeout(() => { window.location.reload() }, 1000)}
                     </p>
                 :
-                <div>
+                <div id = "coctaillist">
                     {this.showText ? this.text : null}
+                    {<br />}
                     {coctaillist(this.state.coctails)}
                 </div>
                 }

@@ -1,6 +1,9 @@
 import React from "react";
 import { Checkbox } from '@material-ui/core';
 
+// import css-Files
+import './coctail.css';
+
 export function coctail(probs) {
 
     let zutaten = []
@@ -18,28 +21,39 @@ export function coctail(probs) {
 
     probs.Rezept.map((element) => 
         rezept.push(
-            <tr>
-                <td>
-                    {element}
-                </td>
-                <td>
-                <Checkbox 
-                        value = "uncontrolled" 
-                        inputProps = {{ 'aria-label': 'uncontrolled-checkbox' }} 
-                        id = {element} 
-                        />
-                </td>
-            </tr>
+            <div>
+                <tr>
+                    <td>
+                        {element}
+                    </td>
+                    <td>
+                    <Checkbox 
+                            value = "uncontrolled" 
+                            inputProps = {{ 'aria-label': 'uncontrolled-checkbox' }} 
+                            id = {element} 
+                            />
+                    </td>
+                </tr>
+                <hr 
+                        style= {{
+                        color: "grey",
+                        backgroundColor: "grey",
+                        height: 1
+                        }}> 
+                    </hr>
+            </div>
         )
     )
 
     return(
-        <div>
-            <table>
+        <div id = "coctailrecipe">
+            <table id = "tablecoctail">
                 <tbody>
                     <tr>
                         <td>
-                            {probs.Coctail}
+                            <h2>
+                                {probs.Coctail}
+                            </h2>
                         </td>
                     </tr>
                     <tr>
@@ -47,6 +61,13 @@ export function coctail(probs) {
                             {zutaten}
                         </td>
                     </tr>
+                    <hr 
+                        style= {{
+                        color: "black",
+                        backgroundColor: "black",
+                        height: 2,
+                        }}> 
+                    </hr>
                     <tr>
                         <td>
                             {rezept} 

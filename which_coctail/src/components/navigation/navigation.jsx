@@ -6,6 +6,9 @@ import FrontPage from "../../containers/FrontPage/FrontPage.jsx";
 import Coctailoverview from "../../containers/coctailoverview/coctailoverview.jsx";
 import Recipeview from "../../containers/Recipeview/Recipeview.jsx";
 
+// import css-Files
+import './navigation.css';
+
 export function navigation(probs) {
 
     // load all coctails

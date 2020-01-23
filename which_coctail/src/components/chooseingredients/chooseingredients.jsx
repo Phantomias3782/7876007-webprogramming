@@ -1,6 +1,9 @@
 import React from 'react';
 import { Checkbox } from '@material-ui/core';
 
+// import css-Files
+import './chooseingredients.css';
+
 export function ChooseIngredients(probs, getActiveIngretients) {
 
     const handleChange = (event) => {
@@ -53,7 +56,7 @@ export function ChooseIngredients(probs, getActiveIngretients) {
 
     return (
         <div>
-            <table>
+            <table id = "chooseingredientsbody">
                 <tbody>
                     {content}
                 </tbody>
