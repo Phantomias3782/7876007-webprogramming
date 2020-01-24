@@ -33,9 +33,9 @@ class Coctailoverview extends React.Component{
                 <div id = "coctaillist">
                     {this.showText ? this.text : null}
                     <br />
-                    Für folgende Coctails hast du ..% der Zutaten
+                    {this.showText ? <div>Für folgende Coctails hast du ..% der Zutaten</div> : null}
                     <br />
-                    {this.percentage.map((element) => <div class = "percent"> Coctail:{element[0]}  Prozent: {Number((element[1]).toFixed(2))} </div>)}
+                    {this.showText ? this.percentage.map((element) => <div class = "percent"> Coctail: {element[0]} | Prozent: {Number((element[1]).toFixed(2))} </div>) : null}
                     {coctaillist(this.state.coctails)}
                 </div>
                 }
