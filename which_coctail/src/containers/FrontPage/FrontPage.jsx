@@ -78,9 +78,10 @@ class FrontPage extends React.Component{
             perc_per_coctail.push([e[0], percentage])
         ))
         console.log("percentage", perc_per_coctail)
+        this.backupcoctails.CoctailPercent = perc_per_coctail
+        console.log("backupcoctail", this.backupcoctails)
         
         // load all elements of possible coctails
-        console.log("all coctails", this.state.coctails)
         let allcoctails = []
 
         let add = 0
@@ -157,7 +158,6 @@ class FrontPage extends React.Component{
                     <Button onClick = {this.openCoctails}  >
                         Suche passende Coctails!
                     </Button>
-                    {/*<img src = {require("../../images/californication.jpg")} />*/}
     
                 </div>
 

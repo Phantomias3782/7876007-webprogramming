@@ -13,6 +13,8 @@ class Coctailoverview extends React.Component{
         this.state.coctails && this.state.coctails.length ? this.showEmpty = false : this.showEmpty = true
         this.text = probs.shoppingtext
         this.showText = probs.showText
+        this.percentage = probs.CoctailPercent
+        console.log("Percent:", this.percentage)
     }
 
     render () {
@@ -25,12 +27,15 @@ class Coctailoverview extends React.Component{
                             Leider hast du nicht genügend Zutaten für einen Coctail! 
                             Seite wird neu geladen.
                         </h1>
-                        {/*{setTimeout(() => { window.location.reload() }, 1000)}*/}
+                        {setTimeout(() => { window.location.reload() }, 1000)}
                     </p>
                 :
                 <div id = "coctaillist">
                     {this.showText ? this.text : null}
-                    {<br />}
+                    <br />
+                    Für folgende Coctails hast du ..% der Zutaten
+                    <br />
+                    {this.percentage.map((element) => <div class = "percent"> Coctail:{element[0]}  Prozent: {Number((element[1]).toFixed(2))} </div>)}
                     {coctaillist(this.state.coctails)}
                 </div>
                 }

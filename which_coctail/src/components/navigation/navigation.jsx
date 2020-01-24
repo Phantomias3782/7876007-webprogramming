@@ -34,6 +34,7 @@ export function navigation(probs) {
                 </Link>
 
                 <br />
+                <br />
 
                 <Link to = "/coctailübersicht">
                     <Button id = "CoctailOverview" variant = "contained" color = "default" size = "large">
@@ -41,6 +42,7 @@ export function navigation(probs) {
                     </Button>
                 </Link>
 
+                <br />
                 <br />
 
                 <Link to = "/coctailname">
