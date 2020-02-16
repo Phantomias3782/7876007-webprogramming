@@ -21,6 +21,8 @@ export function navigation(probs) {
     let mojito = {coctail: coctails.coctails[1]}
     let californication = {coctail: coctails.coctails[0]}
     let sotb = {coctail: coctails.coctails[2]}
+    let martini = {coctail: coctails.coctails[3]}
+    let capri = {coctail: coctails.coctails[4]}
 
 
     return (
@@ -53,6 +55,8 @@ export function navigation(probs) {
 
             </nav>
 
+            {/* Switch to suiting page and load corresponding coctail */}
+            
             <Switch>
                 
                 <Route path = "/zutatenwahl" render = {() => <FrontPage {...probs} />} /> {/* replaced ...ingredients by ...probs */}
@@ -66,6 +70,10 @@ export function navigation(probs) {
                 <Route path = "/Sex_on_the_Beach"  render = {() => <Recipeview {...sotb} />} />
                 
                 <Route path = "/Californication" render = {() => <Recipeview {...californication} />} />
+
+                <Route path = "/Martini" render = {() => <Recipeview {...martini} />} />
+
+                <Route path = "/Caprihana" render = {() => <Recipeview {...capri} />} />
 
             </Switch>
 
